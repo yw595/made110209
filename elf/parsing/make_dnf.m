@@ -6,6 +6,8 @@ while true
     new_list = {};
     N = length(ex_list);
     for i = 1 : N
+        disp(['N: ' num2str(N)])
+	disp(['length of new_list: ' num2str(length(new_list))])
         exi = ex_list{i};
         if has_or(exi)
             new_list{end+1} = split_by_or(exi,'left');

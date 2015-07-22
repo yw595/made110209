@@ -1,5 +1,6 @@
 function [expression] = parse(tokens,weak)
-
+disp('PARSE')
+disp(tokens.length())
 if nargin < 2,  weak = false; end
 
 previous = [];

@@ -1,5 +1,5 @@
 function [tokens] = tokenize(str)
-
+disp('TOKENIZE')
 chars = stack(fliplr(str));
 tokens = stack();
 
@@ -9,6 +9,7 @@ allowable_ors  = {'or', 'OR'};
 terminators = {')', '&', '|'};
 
 while chars.is_another
+    disp(chars.length())
     switch chars.peek()
         case '('
             tokens.push(token('('));

@@ -45,9 +45,13 @@ n_has_gpr = sum(has_gpr);
 exprs = cell(size(gpr));
 gene_assocs = cell(size(gpr));
 for i = 1 : nrxns
+    disp(i)
     if has_gpr(i)
+        disp('HAS_GPR')
         exprs{i} = parse_string(gpr{i});
+	disp('PARSED')
         lists = make_dnf(exprs{i});
+	disp('DNF')
         gene_assocs{i} = cellfun(@(x) genes_to_idxs(x), lists, ...
                                  'UniformOutput', false);
     else
